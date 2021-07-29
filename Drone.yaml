@@ -1,31 +1,43 @@
 #Drone CI File!
 #Commit Message: Drone! Captain Canary is here!! 
 
-# kind: pipeline
-# type: docker
-# name: default
+kind: pipeline
+type: docker
+name: default
 
-# steps:
-# - name: build
-#   image: maven:3.3-jdk-8
-#   commands:
-#   - mvn compile
-pipeline:
-  build:
-    image: maven:3.3-jdk-8
-    secrets: [ Muthusam8@123, saravanan060394@gmail.com, https://harnesssample.jfrog.io/artifactory/java-generic-local/]
-    commands:
-      - mvn compile
+steps:
+- name: build
+  image: maven:3.3-jdk-8
+  commands:
+  - mvn compile
+- name: publish  
+  image: plugins/docker
+  settings:
+    username:
+      from_secret: saravanan060394@gmail.com
+    password:
+      from_secret: Muthusam8@123
+    repo: https://harnesssample.jfrog.io/artifactory/java-generic-local/
+    auto_tag: true
+    auto_tag_suffix: drone-build
+    
+    
+# pipeline:
+#   build:
+#     image: maven:3.3-jdk-8
+#     secrets: [ Muthusam8@123, saravanan060394@gmail.com, https://harnesssample.jfrog.io/artifactory/java-generic-local/]
+#     commands:
+#       - mvn compile
 
-plugin:
-  name: Artifactory
-  desc: Publish files and artifacts to Artifactory
-  type: publish
-  image: athieriot/drone-artifactory
-  url: https://harnesssample.jfrog.io/artifactory/java-generic-local/
-  username: saravanan060394@gmail.com
-  password: Muthusam8@123
-  pom: pom.xml
-  files:
-    - target/*.jar
-    - target/*.war
+# plugin:
+#   name: Artifactory
+#   desc: Publish files and artifacts to Artifactory
+#   type: publish
+#   image: athieriot/drone-artifactory
+#   url: https://harnesssample.jfrog.io/artifactory/java-generic-local/
+#   username: saravanan060394@gmail.com
+#   password: Muthusam8@123
+#   pom: pom.xml
+#   files:
+#     - target/*.jar
+#     - target/*.war
