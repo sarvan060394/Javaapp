@@ -11,12 +11,15 @@ steps:
   commands:
   - mvn compile
 
-- artifactory:
-    image: athieriot/drone-artifactory
-    url: https://harnesssample.jfrog.io/artifactory/java-generic-local/
-    username: saravanan060394@gmail.com
-    password: Muthusam8@123
-    pom: pom.xml
-    files:
-      - target/*.jar
-      - target/*.war
+plugin:
+  name: Artifactory
+  desc: Publish files and artifacts to Artifactory
+  type: publish
+  image: athieriot/drone-artifactory
+  url: https://harnesssample.jfrog.io/artifactory/java-generic-local/
+  username: saravanan060394@gmail.com
+  password: Muthusam8@123
+  pom: pom.xml
+  files:
+    - target/*.jar
+    - target/*.war
