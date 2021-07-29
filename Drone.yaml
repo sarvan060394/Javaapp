@@ -12,13 +12,13 @@ steps:
   - mvn compile
   - mvn test -B
 
-# - name: publish  
-#   image: plugins/docker
-#   settings:
-#     username:
-#       from_secret: docker_username
-#     password:
-#       from_secret: docker_password
-#     repo: sarvan060394/dronetest
-#     auto_tag: true
-#     auto_tag_suffix: drone-build
+pipeline:
+  artifactory:
+    image: athieriot/drone-artifactory
+    url: https://harnesssample.jfrog.io/artifactory/java-generic-local/
+    username: saravanan060394@gmail.com
+    password: Muthusam8@123
+    pom: pom.xml
+    files:
+      - target/*.jar
+      - target/*.war
