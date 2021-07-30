@@ -13,6 +13,6 @@ pipeline:
     #build
       - mvn compile
     # Publish the build with bp command
-      - ./jfrog rt u /drone/src/github.com/sarvan060394/Javaapp/target/* /java-generic-local/files
+      - ./jfrog rt u --recursive ./drone/src/github.com/sarvan060394/Javaapp/target/* java-generic-local/files
     #  --url=https://harnesssample.jfrog.io/artifactory/java-generic-local/
 
