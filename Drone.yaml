@@ -11,7 +11,7 @@ pipeline:
 #       - ./jfrog config add --artifactory-url=$ARTIFACTORY_URL --user=$ARTIFACTORY_USER --password=$ARTIFACTORY_PASSWORD --interactive=false
 #       - ./jfrog c show
     #build
-      - mvn compile
+      - mvn package
       - ls -R
     # Publish the build with bp command
 #       - ./jfrog config add --artifactory-url=$ARTIFACTORY_URL --user=$ARTIFACTORY_USER --password=$ARTIFACTORY_PASSWORD --interactive=false
