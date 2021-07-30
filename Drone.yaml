@@ -35,6 +35,7 @@ pipeline:
     password: Muthusam8@123
     pom: pom.xml
     files:
-      - target/*.jar
-      - target/*.war
+      - target/classes
+#       - target/*.jar
+#       - target/*.war
 
