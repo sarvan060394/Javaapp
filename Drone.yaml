@@ -28,7 +28,7 @@ pipeline:
 #     commands:
 #       - mvn compile
   build:
-    image: node:latest
+    image: node:16-alpine3.11
     commands:
       - apt-get update && apt-get install make
       - make install
