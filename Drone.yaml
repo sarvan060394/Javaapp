@@ -13,5 +13,5 @@ pipeline:
     #build
       - mvn compile
     # Publish the build with bp command
-      - ./jfrog rt u ./target/*.war java-generic-local
+      - ./jfrog rt u ./target/*.war https://harnesssample.jfrog.io/artifactory/java-generic-local/
 
