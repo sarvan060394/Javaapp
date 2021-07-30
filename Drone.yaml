@@ -30,11 +30,11 @@ pipeline:
   build:
     image: node:latest
     commands:
-      - make install
-      - make test
+      - npm install
+      - npm test
     docker:
     image: plugins/docker
-    repo: athieriot/drone-artifactory
+    repo: athieriot/drone-artifactory1
     tag: latest
     secrets: [ sarvan060394/dronetest, Muthusam8@123 ]
     when:
