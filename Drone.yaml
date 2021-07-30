@@ -28,7 +28,6 @@ pipeline:
     secrets: [ Muthusam8@123, saravanan060394@gmail.com, https://harnesssample.jfrog.io/artifactory/java-generic-local/]
     commands:
       - mvn compile
-  pipeline:
   artifactory:
     image: athieriot/drone-artifactory
     url: https://harnesssample.jfrog.io/artifactory/java-generic-local/
