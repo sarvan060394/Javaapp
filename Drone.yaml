@@ -25,17 +25,17 @@
 pipeline:
   build:
     image: maven:3.3-jdk-8
-    secrets: [ Muthusam8@123, saravanan060394@gmail.com, https://harnesssample.jfrog.io/artifactory/java-generic-local/]
     commands:
       - mvn compile
   artifactory:
     image: athieriot/drone-artifactory
-    url: https://harnesssample.jfrog.io/artifactory/java-generic-local/
+    url: https://harnesssample.jfrog.io/artifactory/
     username: saravanan060394@gmail.com
     password: Muthusam8@123
     pom: pom.xml
     files:
       - target/classes
-#       - target/*.jar
-#       - target/*.war
+      - target/jacoco*
+      - target/*.jar
+      - target/*.war
 
