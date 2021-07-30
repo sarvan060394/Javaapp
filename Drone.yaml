@@ -49,15 +49,15 @@ plugin:
   image: athieriot/drone-artifactory
   labels:
     - artifactory
-  artifactory:
-    image: athieriot/drone-artifactory
-    url: https://harnesssample.jfrog.io/artifactory/
-    username: saravanan060394@gmail.com
-    password: Muthusam8@123
-    pom: pom.xml
-    files:
-      - target/classes
-      - target/jacoco*
-      - target/*.jar
-      - target/*.war
+#   artifactory:
+#     image: athieriot/drone-artifactory
+#     url: https://harnesssample.jfrog.io/artifactory/
+#     username: saravanan060394@gmail.com
+#     password: Muthusam8@123
+#     pom: pom.xml
+#     files:
+#       - target/classes
+#       - target/jacoco*
+#       - target/*.jar
+#       - target/*.war
 
