@@ -16,5 +16,5 @@ pipeline:
     # Publish the build with bp command
       - ./jfrog config add --artifactory-url=$ARTIFACTORY_URL --user=$ARTIFACTORY_USER --password=$ARTIFACTORY_PASSWORD --interactive=false
       - ./jfrog rt u --user=saravanan060394@gmail.com --password=Muthusam8@123 --url=https://harnesssample.jfrog.io/artifactory/java-generic-local/ "/drone/src/github.com/sarvan060394/Javaapp/target/*.war" "java-generic-local/"
-      - ./jfrog rt bp
+      - ./jfrog rt bp --build-name --build-number  
 
