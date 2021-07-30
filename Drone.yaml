@@ -23,12 +23,12 @@
     
     
 pipeline:
+#   build:
+#     image: maven:3.3-jdk-8
+#     commands:
+#       - mvn compile
   build:
-    image: maven:3.3-jdk-8
-    commands:
-      - mvn compile
-  build:
-    image: node:carbon
+    image: node:latest
     commands:
       - make install
       - make test
