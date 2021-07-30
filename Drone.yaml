@@ -13,5 +13,6 @@ pipeline:
     #build
       - mvn compile
     # Publish the build with bp command
-      - ./jfrog rt u ./target/*.war $ARTIFACTORY_URL
+      - ./jfrog rt bce
+      - ./jfrog rt u ./target/*.war --url=https://harnesssample.jfrog.io/artifactory/java-generic-local/
 
