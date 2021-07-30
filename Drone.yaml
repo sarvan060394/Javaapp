@@ -12,9 +12,9 @@ pipeline:
 #       - ./jfrog c show
     #build
       - mvn package
-      - ls -R
+#       - ls -R
     # Publish the build with bp command
-#       - ./jfrog config add --artifactory-url=$ARTIFACTORY_URL --user=$ARTIFACTORY_USER --password=$ARTIFACTORY_PASSWORD --interactive=false
-#       - ./jfrog rt u --user=$ARTIFACTORY_USER --password=$ARTIFACTORY_PASSWORD --url=https://harnesssample.jfrog.io/artifactory/java-generic-local/ "/drone/src/github.com/sarvan060394/Javaapp/target/jacoco*" "java-generic-local/files"
+      - ./jfrog config add --artifactory-url=$ARTIFACTORY_URL --user=$ARTIFACTORY_USER --password=$ARTIFACTORY_PASSWORD --interactive=false
+      - ./jfrog rt u --user=$ARTIFACTORY_USER --password=$ARTIFACTORY_PASSWORD --url=https://harnesssample.jfrog.io/artifactory/java-generic-local/ "/drone/src/github.com/sarvan060394/Javaapp/target/*.war" "java-generic-local/files"
     #  --url=https://harnesssample.jfrog.io/artifactory/java-generic-local/
 
