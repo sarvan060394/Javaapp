@@ -8,11 +8,10 @@ pipeline:
     commands:
     # Download the JFrog CLI 
       - curl -fL https://getcli.jfrog.io | sh
-      - ./jfrog config add --artifactory-url=https://harnesssample.jfrog.io/artifactory/java-generic-local/ --user=saravanan060394@gmail.com --password=Muthusam8@123 --interactive=false
+      - ./jfrog config add --artifactory-url=$ARTIFACTORY_URL --user=$ARTIFACTORY_USER --password=$ARTIFACTORY_PASSWORD --interactive=false
       - ./jfrog c show
     #build
       - mvn compile
     # Publish the build with bp command
-      - ./jfrog rt u ./target/*.war
       - ./jfrog rt u ./target/*.war java-generic-local
 
