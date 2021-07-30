@@ -27,6 +27,28 @@ pipeline:
     image: maven:3.3-jdk-8
     commands:
       - mvn compile
+  build:
+    image: node:carbon
+    commands:
+      - make install
+      - make test
+    docker:
+    image: plugins/docker
+    repo: athieriot/drone-artifactory
+    tag: latest
+    secrets: [ sarvan060394/dronetest, Muthusam8@123 ]
+    when:
+      event: push
+      branch: master
+      local: false
+
+plugin:
+  name: Artifactory
+  desc: Publish files and artifacts to Artifactory
+  type: publish
+  image: athieriot/drone-artifactory
+  labels:
+    - artifactory
   artifactory:
     image: athieriot/drone-artifactory
     url: https://harnesssample.jfrog.io/artifactory/
