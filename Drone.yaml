@@ -17,4 +17,4 @@ pipeline:
       - ./jfrog rt u --build-name=javabuild --build-number=4 "/drone/src/github.com/sarvan060394/Javaapp/target/*.war" "java-generic-local/"
 #       - ./jfrog rt u --user=saravanan060394@gmail.com --password=Muthusam8@123 --url=https://harnesssample.jfrog.io/artifactory/java-generic-local/ "/drone/src/github.com/sarvan060394/Javaapp/target/*.war" "java-generic-local/"
 
-      - ./jfrog rt bp
+      - ./jfrog rt bp javabuild 4
